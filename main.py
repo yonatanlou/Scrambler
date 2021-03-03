@@ -11,7 +11,7 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get("http://www.google.com")
 search = driver.find_element_by_name("q")
 search.clear()
-search.send_keys("bee movie script")
+search.send_keys(topics[0])
 search.submit()
 
 pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
