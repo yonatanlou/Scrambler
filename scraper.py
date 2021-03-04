@@ -1,12 +1,15 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import pickle
+import time
 
 
 class Scraper:
     FILENAME = "cookies.pkl"
 
     def __init__(self, target_site):
+        # self.driver = webdriver.Chrome(executable_path='C:\Program Files (x86)\Google\Chrome\Application\chrome.exe')
+        # todo - open chrome without the test_chrome (im thinking its not saving the cookies)
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.search = None
         self.set_target_site(target_site)
@@ -24,6 +27,9 @@ class Scraper:
         for keyword in keywords:
             self.search_by_keyword(keyword)
             self.save_cookies()
+            self.search = self.driver.find_element_by_name("q")
+            self.search.clear()
+
         # todo - save cookies in loop or outside?
 
     def save_cookies(self):
