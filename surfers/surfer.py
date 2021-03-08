@@ -6,6 +6,7 @@ class Surfer:
 
     @abstractmethod
     def get_target_name(self):
+        ""Returns the name of the target Site"""
         pass
 
     @abstractmethod
@@ -28,3 +29,7 @@ class Surfer:
         for keyword in keywords:
             self.goto(keyword)
             # todo - sleep? (=waiting period?)
+            
+    def end_session(self):
+        """Ends the browsing session"""
+        pass
