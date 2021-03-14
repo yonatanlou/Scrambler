@@ -1,4 +1,4 @@
-from surfer import Surfer
+from surfers.surfer import Surfer
 
 
 class GoogleSurfer(Surfer):

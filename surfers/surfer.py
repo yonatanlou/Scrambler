@@ -6,7 +6,7 @@ class Surfer:
 
     @abstractmethod
     def get_target_name(self):
-        ""Returns the name of the target Site"""
+        """Returns the name of the target Site"""
         pass
 
     @abstractmethod
