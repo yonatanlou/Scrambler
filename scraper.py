@@ -13,6 +13,8 @@ class Scraper:
         # todo - open chrome without the test_chrome (im thinking its not saving the cookies)
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
+        # to select the correct user data folder :
+        # local disk(c:)->users->main user->AppData->Local->google->chrome->userdata
         user_data = "user-data-dir="+str(self.filename())
         print(user_data)
         chrome_options.add_argument(user_data)
